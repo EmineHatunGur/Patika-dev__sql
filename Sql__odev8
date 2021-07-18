@@ -1,0 +1,21 @@
+--test veritabanınızda employee isimli sütun bilgileri id(INTEGER), 
+--name VARCHAR(50), 
+--birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+CREATE TABLE employee1( 
+	id INTEGER PRIMARY KEY,
+    name VARCHAR(50),
+	birthday DATE ,
+	email VARCHAR(100)
+) ;
+SELECT * FROM employee;
+--Sütunların her birine göre diğer 
+--sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+UPDATE employee 
+SET name = 'ahmet ahmet',
+   birthday = '1996-10-24'
+   WHERE id = 40;
+   
+SELECT * FROM employee  RETURNING *;
+
+--Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+DELETE FROM employee WHERE id = 40 RETURNING *;
